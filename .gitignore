@@ -1,0 +1,10 @@
+node_modules/
+.next/
+*.local
+.env*
+.firecrawl/
+site-audit*/
+visual-review/
+.playwright-mcp/
+*.log
+.DS_Store
