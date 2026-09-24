@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig = {
   output: "export",
   trailingSlash: true,
-  basePath: isGitHubPages ? "/-the-drinkers-website" : "",
+  basePath,
   images: {
     unoptimized: true,
   },
