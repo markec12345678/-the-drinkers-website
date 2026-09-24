@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-const promoImage = "https://www.rockline.si/wp-content/uploads/2026/09/TheDrinkers2026promo.jpg";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";\n\nconst promoImage = "https://www.rockline.si/wp-content/uploads/2026/09/TheDrinkers2026promo.jpg";
 const liveImage = "https://www.rocker.si/wp-content/uploads/2026/09/The-Drinkers-2026-1.jpg";
 const singleImage = "https://i.ytimg.com/vi/SvPAsFE3Y_8/maxresdefault.jpg";
 
@@ -66,7 +66,7 @@ export default function Home() {
         <meta property="og:title" content="The Drinkers — Ni še umru" />
         <meta property="og:description" content="Nova zasedba. Nova glasba. Ista drink'n'roll zgodba." />
         <meta property="og:image" content={promoImage} />
-        <meta name="theme-color" content="#090806" />
+        <meta name="theme-color" content="#090806" />\n        <link rel="icon" href={`${basePath}/favicon.svg`} />
         <link rel="canonical" href="https://thedrinkers.si/" />
       </Head>
 
@@ -300,7 +300,7 @@ export default function Home() {
               {releases.map(([year, title, file], index) => (
                 <article key={title + year} className={"album-card album-" + (index + 1)}>
                   <div className="album-image">
-                    <img src={file} alt={title + " (" + year + ")"} loading="lazy" />
+                    <img src={`${basePath}${file}`} alt={title + " (" + year + ")"} loading="lazy" />
                     <span>{year}</span>
                   </div>
                   <div className="album-meta">
