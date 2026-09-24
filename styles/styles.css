@@ -506,3 +506,577 @@ img{display:block;max-width:100%}
   .booking-main h2{font-size:clamp(68px,18vw,100px)}.footer-brand{font-size:25px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* ═══════════════════════════════════════════════════════
+   2026 POLISH PASS — UI / UX REFINEMENT
+   ═══════════════════════════════════════════════════════ */
+
+:root{
+  --td-accent-soft:#efb45d;
+  --td-paper-2:#f5eee4;
+  --td-shadow:rgba(10,7,4,.18);
+}
+
+body{
+  text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:transparent;
+}
+
+section[id]{
+  scroll-margin-top:82px;
+}
+
+/* Header: quieter, sharper, more editorial */
+.site-header{
+  box-shadow:0 12px 32px rgba(0,0,0,.13);
+  transition:background .3s ease,border-color .3s ease;
+}
+.site-header-inner{
+  min-height:76px;
+}
+.brand-mark{
+  position:relative;
+  padding-left:14px;
+}
+.brand-mark:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:2px;
+  width:3px;
+  height:26px;
+  background:var(--td-accent);
+}
+.brand-mark strong{
+  font-size:19px;
+  letter-spacing:-.075em;
+}
+.desktop-nav a{
+  position:relative;
+  padding:9px 0;
+}
+.desktop-nav a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:2px;
+  height:1px;
+  background:var(--td-accent);
+  transition:right .28s ease;
+}
+.desktop-nav a:hover:after{
+  right:0;
+}
+.header-booking{
+  min-height:38px;
+  border-radius:2px;
+  box-shadow:0 0 0 1px rgba(216,137,36,.05) inset;
+}
+
+/* Hero: more cinematic depth + clearer action hierarchy */
+.hero-2026{
+  min-height:clamp(720px,100svh,1040px);
+}
+.hero-image{
+  transform:scale(1.025);
+  transition:transform 1.4s cubic-bezier(.2,.7,.2,1);
+}
+.hero-2026:hover .hero-image{
+  transform:scale(1.045);
+}
+.hero-image-shade{
+  background:
+    radial-gradient(circle at 66% 42%,rgba(216,137,36,.10),transparent 28%),
+    linear-gradient(90deg,rgba(9,8,6,.99) 0%,rgba(9,8,6,.90) 28%,rgba(9,8,6,.31) 61%,rgba(9,8,6,.72) 100%),
+    linear-gradient(0deg,rgba(9,8,6,.99),rgba(9,8,6,.06) 48%,rgba(9,8,6,.58));
+}
+.hero-copy{
+  padding-bottom:135px;
+}
+.hero-copy h1{
+  max-width:1180px;
+  text-shadow:0 14px 45px rgba(0,0,0,.2);
+}
+.hero-copy h1 span{
+  position:relative;
+}
+.hero-copy h1 span:after{
+  content:"";
+  display:block;
+  width:min(190px,24vw);
+  height:5px;
+  margin-top:18px;
+  background:var(--td-accent);
+  transform:skewX(-22deg);
+}
+.hero-bottom{
+  align-items:center;
+  margin-top:50px;
+}
+.hero-intro{
+  border-left:2px solid var(--td-accent);
+  padding-left:20px;
+}
+.hero-cta{
+  min-height:58px;
+  padding:0 19px 0 22px;
+  border-radius:2px;
+  background:rgba(216,137,36,.04);
+  backdrop-filter:blur(8px);
+}
+.hero-cta:hover{
+  box-shadow:0 18px 50px rgba(216,137,36,.18);
+}
+.hero-ticker{
+  box-shadow:0 -15px 35px rgba(0,0,0,.11);
+}
+
+/* Section navigation / labels */
+.section-topline{
+  position:relative;
+}
+.section-topline:before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:currentColor;
+  opacity:.7;
+  display:inline-block;
+  margin-right:9px;
+  vertical-align:middle;
+}
+
+/* Music: make the single feel like the product, not a content block */
+.single-feature{
+  position:relative;
+  overflow:hidden;
+}
+.single-feature:before{
+  content:"01";
+  position:absolute;
+  right:-.02em;
+  top:-.20em;
+  font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
+  font-size:min(34vw,460px);
+  line-height:1;
+  color:rgba(23,18,13,.035);
+  pointer-events:none;
+}
+.single-grid{
+  position:relative;
+}
+.single-art{
+  box-shadow:32px 32px 0 rgba(23,18,13,.055),0 30px 70px rgba(23,18,13,.12);
+}
+.single-art img{
+  transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .65s;
+}
+.single-art:hover img{
+  transform:scale(1.035);
+  filter:saturate(1.05) contrast(1.04);
+}
+.single-play{
+  width:118px;
+  height:118px;
+  font-weight:950;
+}
+.single-copy{
+  position:relative;
+  z-index:1;
+}
+.single-word{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.single-word:before{
+  content:"";
+  width:36px;
+  height:1px;
+  background:currentColor;
+}
+.single-copy h2{
+  font-size:clamp(86px,9vw,150px);
+  max-width:620px;
+}
+.single-lead{
+  font-size:19px;
+  max-width:580px;
+}
+.credit-grid{
+  max-width:560px;
+}
+.single-links a{
+  transition:color .2s,border-color .2s,transform .2s;
+}
+.single-links a:hover{
+  transform:translateY(-2px);
+}
+
+/* Live: stronger focal hierarchy for next show */
+.live-section{
+  position:relative;
+  overflow:hidden;
+}
+.live-section:after{
+  content:"LIVE";
+  position:absolute;
+  right:-.08em;
+  top:10%;
+  font-family:Impact,sans-serif;
+  font-size:min(27vw,420px);
+  line-height:.8;
+  color:rgba(248,243,233,.025);
+  pointer-events:none;
+}
+.live-head,.shows{
+  position:relative;
+  z-index:1;
+}
+.show-row{
+  min-height:184px;
+  position:relative;
+  overflow:hidden;
+}
+.show-row:before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:0;
+  background:linear-gradient(90deg,rgba(216,137,36,.11),transparent);
+  transition:width .35s ease;
+}
+.show-row:hover:before{
+  width:100%;
+}
+.show-row.featured{
+  background:linear-gradient(90deg,rgba(216,137,36,.08),transparent 45%);
+}
+.show-row.featured .show-date strong{
+  color:var(--td-accent);
+}
+.show-action{
+  position:relative;
+  z-index:2;
+  padding:11px 0;
+}
+.show-action i{
+  transition:transform .25s ease;
+}
+.show-row:hover .show-action i{
+  transform:translate(4px,-4px);
+}
+
+/* Story: sharper editorial split */
+.story-section{
+  position:relative;
+}
+.story-image{
+  min-height:820px;
+}
+.story-image img{
+  transform:scale(1.015);
+  transition:transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.story-image:hover img{
+  transform:scale(1.045);
+}
+.story-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.story-number{
+  margin-top:68px;
+}
+.timeline{
+  max-width:600px;
+}
+.timeline-item{
+  position:relative;
+  transition:padding-left .2s ease,background .2s ease;
+}
+.timeline-item:hover{
+  padding-left:8px;
+}
+.timeline-item.current{
+  padding-left:10px;
+  border-left:2px solid #a65318;
+}
+
+/* Discography: magazine-like grid instead of uniform cards */
+.discography-section{
+  position:relative;
+  overflow:hidden;
+}
+.albums-grid{
+  gap:28px 20px;
+}
+.album-card{
+  position:relative;
+}
+.album-image{
+  aspect-ratio:1/.94;
+  box-shadow:0 16px 40px rgba(0,0,0,.13);
+}
+.album-meta{
+  min-height:48px;
+}
+.album-meta strong{
+  font-size:15px;
+  letter-spacing:-.025em;
+}
+.album-card:nth-child(2) .album-image,
+.album-card:nth-child(6) .album-image{
+  transform:translateY(24px);
+}
+.album-card:nth-child(2) .album-meta,
+.album-card:nth-child(6) .album-meta{
+  transform:translateY(24px);
+}
+
+/* Lineup: make people read like a roster */
+.lineup-section{
+  position:relative;
+}
+.lineup-photo{
+  min-height:760px;
+}
+.lineup-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.member-row{
+  transition:background .22s ease,padding .22s ease;
+}
+.member-row:hover{
+  padding-left:12px;
+  padding-right:8px;
+  background:rgba(23,18,13,.045);
+}
+.member-row strong{
+  font-size:16px;
+}
+
+/* Press + booking: stronger conversion finish */
+.press-strip{
+  position:relative;
+  overflow:hidden;
+}
+.press-strip:after{
+  content:"PRESS";
+  position:absolute;
+  right:-.02em;
+  bottom:-.16em;
+  font-family:Impact,sans-serif;
+  font-size:min(16vw,250px);
+  color:rgba(11,8,5,.06);
+  pointer-events:none;
+}
+.press-strip>*{
+  position:relative;
+  z-index:1;
+}
+.booking-section{
+  position:relative;
+  overflow:hidden;
+}
+.booking-section:before{
+  content:"06";
+  position:absolute;
+  right:-.03em;
+  top:-.18em;
+  font-family:Impact,sans-serif;
+  font-size:min(35vw,520px);
+  line-height:1;
+  color:rgba(11,8,5,.065);
+  pointer-events:none;
+}
+.booking-main,.booking-top{
+  position:relative;
+  z-index:1;
+}
+.booking-main h2{
+  font-size:clamp(82px,10vw,158px);
+}
+.booking-phone{
+  border-bottom:1px solid rgba(11,8,5,.16);
+}
+.booking-socials a{
+  position:relative;
+  padding-bottom:7px;
+}
+.booking-socials a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:0;
+  height:1px;
+  background:#f8f3e9;
+  transition:right .25s ease;
+}
+.booking-socials a:hover:after{
+  right:0;
+}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid rgba(255,255,255,.07);
+}
+.site-footer>a{
+  transition:transform .2s ease,color .2s ease;
+}
+.site-footer>a:hover{
+  transform:translateY(-2px);
+}
+
+/* Touch and reduced motion */
+@media (hover:none){
+  .hero-2026:hover .hero-image,
+  .story-image:hover img,
+  .single-art:hover img{
+    transform:none;
+  }
+}
+
+/* Tablet */
+@media (max-width:900px){
+  .site-header-inner{
+    min-height:70px;
+  }
+  .desktop-nav{
+    display:flex;
+    order:3;
+    flex:1 0 100%;
+    gap:22px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding:2px 0 7px;
+  }
+  .desktop-nav::-webkit-scrollbar{
+    display:none;
+  }
+  .site-header{
+    backdrop-filter:blur(22px);
+  }
+  .hero-copy{
+    padding-top:148px;
+  }
+  .hero-copy h1 span:after{
+    margin-top:13px;
+    height:4px;
+  }
+  .albums-grid{
+    gap:20px 14px;
+  }
+  .album-card:nth-child(2) .album-image,
+  .album-card:nth-child(6) .album-image,
+  .album-card:nth-child(2) .album-meta,
+  .album-card:nth-child(6) .album-meta{
+    transform:none;
+  }
+  .show-row{
+    min-height:158px;
+  }
+}
+
+/* Phone */
+@media (max-width:560px){
+  .site-header-inner{
+    width:calc(100% - 22px);
+    row-gap:7px;
+    padding:8px 0 6px;
+  }
+  .desktop-nav{
+    gap:18px;
+    margin-top:1px;
+  }
+  .desktop-nav a{
+    font-size:9px;
+    letter-spacing:.14em;
+    flex:0 0 auto;
+  }
+  .brand-mark strong{
+    font-size:16px;
+  }
+  .header-booking{
+    font-size:9px;
+  }
+  .hero-copy{
+    min-height:100svh;
+    padding-top:132px;
+    padding-bottom:105px;
+  }
+  .hero-copy h1{
+    font-size:clamp(62px,19vw,104px);
+    line-height:.8;
+  }
+  .hero-copy h1 span:after{
+    width:74px;
+    height:3px;
+    margin-top:11px;
+  }
+  .hero-bottom{
+    margin-top:34px;
+  }
+  .hero-intro{
+    padding-left:15px;
+  }
+  .hero-cta{
+    width:100%;
+    min-width:0;
+  }
+  .hero-ticker{
+    font-size:8px;
+  }
+  .single-feature:before{
+    font-size:55vw;
+  }
+  .single-play{
+    width:84px;
+    height:84px;
+    font-size:10px;
+  }
+  .single-copy h2{
+    font-size:clamp(70px,20vw,100px);
+  }
+  .single-lead{
+    font-size:16px;
+  }
+  .show-row{
+    min-height:150px;
+  }
+  .show-row.featured{
+    border-left-width:2px;
+    padding-left:14px;
+  }
+  .show-date strong{
+    font-size:49px;
+  }
+  .story-copy{
+    padding-top:56px;
+    padding-bottom:62px;
+  }
+  .story-number{
+    margin-top:48px;
+  }
+  .story-copy h2{
+    font-size:clamp(62px,17vw,92px);
+  }
+  .albums-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .album-image{
+    box-shadow:0 10px 26px rgba(0,0,0,.12);
+  }
+  .lineup-photo{
+    min-height:430px;
+  }
+  .booking-main h2{
+    font-size:clamp(72px,19vw,106px);
+  }
+}
