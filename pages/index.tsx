@@ -67,7 +67,8 @@ export default function Home() {
         <meta property="og:title" content="The Drinkers — Ni še umru" />
         <meta property="og:description" content="Nova zasedba. Nova glasba. Ista drink'n'roll zgodba." />
         <meta property="og:image" content={promoImage} />
-        <meta name="theme-color" content="#090806" />\n        <link rel="icon" href={`${basePath}/favicon.svg`} />
+        <meta name="theme-color" content="#090806" />
+        <link rel="icon" href={`${basePath}/favicon.svg`} />
         <link rel="canonical" href="https://thedrinkers.si/" />
       </Head>
 
