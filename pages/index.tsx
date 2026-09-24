@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-const promoImage = "https://www.rocker.si/wp-content/uploads/2026/09/The-Drinkers-2026-1.jpg";
+const promoImage = "https://www.rockline.si/wp-content/uploads/2026/09/TheDrinkers2026promo.jpg";
+const liveImage = "https://www.rocker.si/wp-content/uploads/2026/09/The-Drinkers-2026-1.jpg";
 const singleImage = "https://i.ytimg.com/vi/SvPAsFE3Y_8/maxresdefault.jpg";
-
 const releases = [
   ["1995", "Lepi in trezni", "/images/album-lepi-in-trezni.jpg"],
   ["1997", "Žeja", "/images/album-zeja.jpg"],
