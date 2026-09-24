@@ -409,3 +409,36 @@ main {
 .hover-glow:hover {
     box-shadow: 0 0 20px rgba(212, 115, 26, 0.3);
 }
+
+
+/* Editorial homepage motion */
+@keyframes drinkers-marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+}
+
+.drinkers-marquee {
+    animation: drinkers-marquee 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .drinkers-marquee,
+    .shake-active,
+    .animate-text-shake {
+        animation: none !important;
+    }
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-xl {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
+}
