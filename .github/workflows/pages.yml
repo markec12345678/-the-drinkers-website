@@ -32,7 +32,6 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
         with:
-          static_site_generator: next
           enablement: true
 
       - name: Install dependencies
@@ -41,7 +40,6 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
